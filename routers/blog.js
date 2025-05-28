@@ -1,12 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const blogController = require("../controllers/blogController");
 
-router.get("/", (req, res) => {
-    res.send("elenco dei miei blog");
-});
+router.get("/", blogController.index);
 
-router.get("/:id", (req, res) => {
-    res.send(`blog : ${req.params.id}`);
-});
+router.get("/:id", blogController.show);
 
 module.exports = router;
