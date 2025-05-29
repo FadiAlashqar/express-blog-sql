@@ -22,16 +22,3 @@ Milestone 4
 Facciamo sì che l’API di SHOW restituisca il post desiderato in formato JSON
 Verifichiamo su Postman che la risposta sia corretta
 Numero di push: minimo 8
-
- const id = req.params.id;
-    const sql = `SELECT * FROM posts WHERE posts.id = ${id}`;
-
-    connection.query(sql, (err, results) => {
-        if (err) {
-            return res.status(500).json({ error: "Database query failed" });
-        }
-        else {
-            res.json(results);
-        }
-
-    })
